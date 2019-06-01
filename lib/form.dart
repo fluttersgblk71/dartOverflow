@@ -34,13 +34,19 @@ class _FormState extends State<FormPage> {
           title: Text("New Entry"),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
               // decoration: BoxDecoration(color: Colors.red),
               alignment: Alignment(1.0, 0.0),
               child: Column(children: <Widget>[
-                Text('Url'),
+                Text(
+                  'My saving grace',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20.0
+                  )
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
@@ -52,17 +58,21 @@ class _FormState extends State<FormPage> {
               ]),
             ),
             Container(
-                // decoration: BoxDecoration(color: Colors.grey),
-                // height: MediaQuery.of(context).size.height * 0.3,
-                // width: MediaQuery.of(context).size.width * 0.9,
+                height: MediaQuery.of(context).size.height * 0.5,
                 child: Column(
               children: <Widget>[
-                Text('Description'),
+                Text(
+                  'Description',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20.0
+                  )
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
                     controller: descriptionController,
-                    maxLines: 4,
+                    maxLines: 12,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(), hintText: 'Description'),
                   ),
@@ -70,11 +80,10 @@ class _FormState extends State<FormPage> {
               ],
             )),
             FlatButton(
-              // onPressed: () {
-                // _saveTextFields(urlController.text, descriptionController.text);
-              // },
-              onPressed: (){},
-              color: Colors.red,
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              color: Colors.blue,
               textColor: Colors.white,
               child: Text('Save'),
             ),

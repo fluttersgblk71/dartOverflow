@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './form.dart';
+import './list.dart';
 
 class User extends StatefulWidget {
   User({Key key}) : super(key: key);
@@ -13,11 +14,11 @@ class _UserState extends State<User> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("User Page"),
+        title: Text("Welcome to Dart Overflow"),
       ),
       body: new Center(
         child: new Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          // crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Container(
@@ -31,35 +32,77 @@ class _UserState extends State<User> {
                 )
               )
             ),
-            FlatButton(
-              onPressed: () {
-                print ("Flat button pressed");
-                Navigator.push(
-                  context,
-                  PageRouteBuilder(
-                    pageBuilder: (context, anim1, anim2) => FormPage()
-                  )
-                );
-              },
-              color: Colors.red,
-              textColor: Colors.white,
-              child: Text('Go to form page'),
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: Text(
+                "Mr. Flutter",
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20.0
+                )
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 4.0),
+              child: FlatButton(
+                onPressed: () {
+                  print ("Flat button pressed");
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, anim1, anim2) => List()
+                    )
+                  );
+                },
+                color: Colors.blue,
+                textColor: Colors.white,
+                child: Text('Go to Project A'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: FlatButton(
+                onPressed: () {
+                  print ("Flat button pressed");
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, anim1, anim2) => List()
+                    )
+                  );
+                },
+                color: Colors.cyan,
+                textColor: Colors.white,
+                child: Text('Go to Project B'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: FlatButton(
+                onPressed: () {
+                  print ("Flat button pressed");
+                  Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, anim1, anim2) => List()
+                    )
+                  );
+                },
+                color: Colors.green,
+                textColor: Colors.white,
+                child: Text('Go to Project C'),
+              ),
             )
           ],
         )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print ("action button pressed");
           Navigator.push(context,
-            //PageRouteBuilder(
-            //  pageBuilder: (context, anim1, anim2) => FormPage()
-            //)
             MaterialPageRoute(builder: (context) => FormPage())
           );
         },
-        child: Icon(Icons.add),
-        mini: true,
+        child: Icon(Icons.add)
       )
     );
   }

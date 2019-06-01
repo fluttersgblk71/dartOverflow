@@ -163,7 +163,7 @@ class _ListState extends State<List> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("List Page"),
+          title: Text("Project timeline"),
         ),
         body: _renderAllItems(),
         floatingActionButton: FloatingActionButton(
