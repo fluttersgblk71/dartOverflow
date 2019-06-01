@@ -1,15 +1,15 @@
 
 import 'package:flutter/material.dart';
 
-class Form extends StatefulWidget {
+class FormPage extends StatefulWidget {
   
-  Form({Key key}) : super(key: key);
+  FormPage({Key key}) : super(key: key);
 
   @override
   _FormState createState() => _FormState();
 }
 
-class _FormState extends State<Form> {
+class _FormState extends State<FormPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

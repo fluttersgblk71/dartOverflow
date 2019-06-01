@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import './form.dart';
 
 class User extends StatefulWidget {
   
@@ -16,8 +16,26 @@ class _UserState extends State<User> {
       appBar: AppBar(
         title: Text("User Page"),
       ),
-      body: Center(
-        child: Text("This is a user page"),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Center(
+            child: Text("This is a user page"),
+          ),
+          FlatButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, anim1, anim2) => FormPage()
+                )
+              );
+            },
+            color: Colors.red,
+            textColor: Colors.white,
+            child: Text('Go to form page'),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
